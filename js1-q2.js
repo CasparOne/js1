@@ -5,12 +5,12 @@ var man = { name: 'Victor', age: 34};
 
 man.lastName = 'Volodin';
 
-alert(man.lastName);
+alert('Вопрос 2: ' + man.lastName);
 
 // Если обратиться к Несуществующему свойству, получим результат undefined. Что, собственно, логично
-alert(man['Не заданное свойство объекта']);
+alert('Вопрос 2: ' + man['Не заданное свойство объекта']);
 
 // удалить свойство
 delete man.lastName;
 
-alert(man.lastName);
+alert('Вопрос 2: ' + man.lastName);

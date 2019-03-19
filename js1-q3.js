@@ -18,4 +18,4 @@ function mySecondFunction(arg) {
     return myFunction() + ' ' + pseudoGlobalVar; // так тоже можно.
 }
 
-alert(mySecondFunction(gVar));
+alert('Вопрос 3: ' + mySecondFunction(gVar));
