@@ -11,24 +11,21 @@
  *
  */
 function cycleFactorial(x) {
-    if (+x <= 1) {
-        return 1;
-    }
-
-    // var res = 1;
-    //
-    // while (x > 0) {
-    //     res = res * x--;
-    // }
 
     var res;
-    var i;
-    for (i = x, res = 1; i > 0; i-- ) {
-        res *= i;
+    // так как ноль приводится к значению false мы можем проверить
+    if (x) {
+        res = 1;
+        while (x > 0) {
+            res = res * x--;
+        }
+        return res;
     }
 
-    return res;
+    // for (let i = x, res = 1; i > 0; i-- ) {
+    //     res *= i;
+    // }
+
+    return 1;
 
 }
-
-alert(cycleFactorial(4));

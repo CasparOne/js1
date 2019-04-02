@@ -1,16 +1,17 @@
+"use strict";
 
-var man = { name: 'Victor', age: 34};
 
-// Что бы добавить к объекту новое свойство нужно присвоить значение
+/**
+ *
+ * @param x
+ * @returns {number}
+ *
+ * Применение рекурсивной функции
+ */
+function recurFact(x) {
+    if (x) {
+        return x * recurFact(x - 1);
+    }
+    return 1;
+}
 
-man.lastName = 'Volodin';
-
-alert('Вопрос 2: ' + man.lastName);
-
-// Если обратиться к Несуществующему свойству, получим результат undefined. Что, собственно, логично
-alert('Вопрос 2: ' + man['Не заданное свойство объекта']);
-
-// удалить свойство
-delete man.lastName;
-
-alert('Вопрос 2: ' + man.lastName);

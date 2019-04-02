@@ -1,26 +1,39 @@
-/**
- * Only if the room is square
- * @param length
- * @param width
- * @param height
- */
-function wallSize(length, width, height) {
-    lengthRoomWall = (+length + width) * 2;
-    return lengthRoomWall * height;
-}
+"use strict";
+
+// let func = function (x, y = 100) { ... };
+
+
+// Первый аргумент функции обязательный для передачи от пользователя
+// второй - не обязательгный, который имеет дефолтное значение - 100
+// угадал сразу. Во многих, почти всех современных C-like ЯП подобное практикуется.
+// например в PHP дяя задания не обязательного аргумента в сигнатуре функции этому аргументу присваивают знаение null
+
+// let func = function (x, y = 100) {
+//     console.log( x + y);
+//     };
+
+
+
+
+// Преобразование и вывод количество копеек в формат руб коп
 
 /**
  *
- * @type {{length: string, width: string}}
+ * @param x
+ * @param y
+ * @returns {number}
  */
-var rollOfWallpaper = {length: '', width: ''};
+function convertToRub(x, y = 100) {
+    // let ограничивает контекст использования переменной только текущим блоком кода, включая вложенные функции и циклы
+    let items = [];
+    let func = function() {
+        if (x > y) {
+            return console.log( Math.floor(x/y) + " rub " + (x%y) + " cop")
+        }
+         return console.log(x);
+    };
 
-rollOfWallpaper.length = 5;
-rollOfWallpaper.width = 0.85;
-rollOfWallpaper.square = rollOfWallpaper.width * rollOfWallpaper.length;
+    return items.push(func());
 
-wallSqare = wallSize(25, 16, 3.8).toFixed(2);
-
-var countOfWallpaper = wallSqare / rollOfWallpaper.square;
-
-alert('Количество рулонов обоев для оклеивания квадратной комнаты площадь стен ' + wallSqare + ' кв.м.:  ' + Math.ceil(countOfWallpaper) + ' рулона');
+}
+var a = convertToRub(3456);
