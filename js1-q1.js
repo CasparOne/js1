@@ -1,31 +1,32 @@
 "use strict";
 
+function Calculator(a, b, oper)
+{
+    this.firstOperand = +a;
+    this.secondOperand = +b;
+    this.result = null;
 
-/**
- *
- * @param x
- * @returns {number}
- *
- * There is two variant of getting factorial inside of function
- * I prefer to use first variant with "while" cycle because there is only one variable to be declared
- *
- */
-function cycleFactorial(x) {
+    if (oper === '-' || oper === '+') {
+        this.operation = oper;
+    } else this.operation = null;
 
-    var res;
-    // так как ноль приводится к значению false мы можем проверить
-    if (x) {
-        res = 1;
-        while (x > 0) {
-            res = res * x--;
+    this.calc = function () {
+        if (!this.result) {
+            this.result = f(this.firstOperand, this.secondOperand, this.operation);
         }
-        return res;
-    }
+        return this.result;
+    };
 
-    // for (let i = x, res = 1; i > 0; i-- ) {
-    //     res *= i;
-    // }
-
-    return 1;
+    let f = function (a, b, c) {
+        if (c === '+') {
+            return +a + b;
+        } else if (c === '-') {
+            return a - b;
+        } else return null;
+    };
 
 }
+
+var calculator = new Calculator(2, 3, '+');
+alert( calculator.calc() ); // 5 (вычисление)
+alert( calculator.calc() ); // 5 (взято ранее вычисленное значение)
